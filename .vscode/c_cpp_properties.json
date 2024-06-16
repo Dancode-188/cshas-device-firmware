@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "windows-gcc-x64",
+      "name": "esp8266",
       "includePath": [
         "${workspaceFolder}/**",
         "C:/Users/User/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include",
@@ -33,6 +33,47 @@
         "ARDUINO_BOARD=\"PLATFORMIO_NODEMCUV2\"",
         "FLASHMODE_DIO",
         "ARDUINO_ARCH_ESP8266"
+      ]
+    },
+    {
+      "name": "esp32",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wifi_provisioning",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/cores/esp32",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/variants/esp32",
+        "C:/Users/User/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"
+      ],
+      "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": [
+        "-mlongcalls",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-nostdlib",
+        "-Wl,--gc-sections",
+        "-fexceptions",
+        "-fpermissive"
+      ],
+      "defines": [
+        "ARDUINO=10805",
+        "ARDUINO_ESP32_DEV",
+        "ESP32",
+        "F_CPU=240000000L",
+        "PLATFORMIO=50100",
+        "ARDUINO_ARCH_ESP32"
       ]
     }
   ],
