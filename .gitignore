@@ -1,0 +1,32 @@
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore build artifacts
+build/
+bin/
+lib/
+src/*.o
+src/*.d
+
+# Ignore PlatformIO files
+.pio/
+.pioenvs/
+.piolibdeps/
+.clang_complete
+.gcc-flags.json
+
+# Ignore configuration files with sensitive information
+src/config.h
+
+# Ignore log files
+logs/
+*.log
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+
+# Ignore MacOS files
+.DS_Store
