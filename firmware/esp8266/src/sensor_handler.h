@@ -1,12 +1,16 @@
 #ifndef SENSOR_HANDLER_H
 #define SENSOR_HANDLER_H
 
-#include <ArduinoJson.h>  // Add necessary includes
+#include <DHT.h>
 
-extern StaticJsonDocument<200> sensorDataPayload;  // Declare the external variable
+#define DHTPIN 2  // Replace with the actual pin number connected to the DHT22 sensor
+#define DHTTYPE DHT22
+
+extern DHT dht;
+extern char sensorDataPayload[256];
 
 void initSensors();
 void readSensors();
 void sendSensorData();
 
-#endif  // SENSOR_HANDLER_H
+#endif
