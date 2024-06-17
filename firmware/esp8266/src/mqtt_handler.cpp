@@ -25,8 +25,30 @@ void reconnectMQTT() {
 }
 
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
-  // Handle incoming MQTT messages
-  // ...
+  // Convert the payload to a string
+  String message;
+  for (unsigned int i = 0; i < length; i++) {
+    message += (char)payload[i];
+  }
+
+  Serial.print("Received message on topic: ");
+  Serial.println(topic);
+  Serial.print("Message: ");
+  Serial.println(message);
+
+  // Handle incoming MQTT messages based on the topic
+  if (strcmp(topic, MQTT_TOPIC_CONTROL) == 0) {
+    // Control message received
+    if (message == "ON") {
+      // Turn on the device
+      digitalWrite(LED_PIN, HIGH);
+      publishMessage(MQTT_TOPIC_STATUS, "LED turned on");
+    } else if (message == "OFF") {
+      // Turn off the device
+      digitalWrite(LED_PIN, LOW);
+       publishMessage(MQTT_TOPIC_STATUS, "LED turned off");
+    }
+  }
 }
 
 void publishMessage(const char* topic, const char* message) {
