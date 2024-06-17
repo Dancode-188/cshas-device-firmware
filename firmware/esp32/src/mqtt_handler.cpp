@@ -43,9 +43,11 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
     if (message == "ON") {
       // Turn on the device
       digitalWrite(LED_PIN, HIGH);
+      publishMessage(MQTT_TOPIC_STATUS, "LED turned on");
     } else if (message == "OFF") {
       // Turn off the device
       digitalWrite(LED_PIN, LOW);
+       publishMessage(MQTT_TOPIC_STATUS, "LED turned off");
     }
   }
 }

@@ -8,6 +8,9 @@ void setup() {
   // Initialize serial communication
   Serial.begin(115200);
 
+  // Initialize the LED pin as an output
+  pinMode(LED_PIN, OUTPUT);
+
   // Connect to Wi-Fi
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
@@ -21,6 +24,9 @@ void setup() {
 
   // Initialize sensors and actuators
   initSensors();
+
+  // Publish a message to indicate that the device is connected and ready
+  publishMessage(MQTT_TOPIC_STATUS, "Device connected");
 }
 
 void loop() {
@@ -34,7 +40,7 @@ void loop() {
   readSensors();
   sendSensorData();
 
-  // Handle any other device-specific tasks
+  // Add any other device-specific tasks or logic here
   // ...
 
   delay(1000);
