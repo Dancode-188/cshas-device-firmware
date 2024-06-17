@@ -1,10 +1,5 @@
 #include "sensor_handler.h"
 #include "mqtt_handler.h"
-#include <Adafruit_Sensor.h>
-#include <DHT.h>
-
-#define DHTPIN 4  // Replace with the actual pin number connected to the DHT22 sensor
-#define DHTTYPE DHT22
 
 // Create an instance of the DHT sensor
 DHT dht(DHTPIN, DHTTYPE);
